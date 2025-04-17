@@ -223,8 +223,6 @@ async def chat_completions(request: ChatCompletionRequest):
         # 处理非流式响应处理
         else:
             try:
-                print(prompt)
-                print(config)
                 events = graph.stream({"messages": prompt}, config)
                 for event in events:
                     for value in event.values():
