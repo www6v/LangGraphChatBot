@@ -17,20 +17,20 @@ logger = logging.getLogger(__name__)
 MODEL_CONFIGS = {
     "openai": {
         "base_url": "https://nangeai.top/v1",
-        "api_key": "sk-0OWbyfzUSwajhvqGoNbjIEEWchM15CchgJ5hIaN6qh9I3XRl",
+        "api_key": "",
         "chat_model": "gpt-4o-mini",
         "embedding_model": "text-embedding-3-small"
 
     },
     "oneapi": {
         "base_url": "http://139.224.72.218:3000/v1",
-        "api_key": "sk-EDjbeeCYkD1OnI9E48018a018d2d4f44958798A261137591",
+        "api_key": "",
         "chat_model": "qwen-max",
         "embedding_model": "text-embedding-v1"
     },
     "qwen": {
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "api_key": "sk-80a72f794bc4488d85798d590e96db43",
+        "api_key": os.getenv("DASHSCOPE_API_KEY"),
         "chat_model": "qwen-max",
         "embedding_model": "text-embedding-v1"
     },

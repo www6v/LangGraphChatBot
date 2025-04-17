@@ -16,17 +16,17 @@ logger = logging.getLogger(__name__)
 MODEL_CONFIGS = {
     "openai": {
         "base_url": "https://yunwu.ai/v1",
-        "api_key": "sk-rmfPKCQYU7yWyX2RDideh1IggooRo8PVh8A42e3wL5zOFxKF",
+        "api_key": "",
         "model": "gpt-4o-mini"
     },
     "oneapi": {
         "base_url": "http://139.224.72.218:3000/v1",
-        "api_key": "sk-ROhn6RNxulVXhlkZ0713F29093Ea49AcAcA29b96125aF1Ff",
+        "api_key": "",
         "model": "qwen-max"
     },
     "qwen": {
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "api_key": "sk-5cee351038c943648971907366eabafe",
+        "api_key": os.getenv("DASHSCOPE_API_KEY"),
         "model": "qwen-max"
     },
     "ollama": {
