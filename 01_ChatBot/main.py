@@ -23,7 +23,7 @@ import uvicorn
 
 
 # 设置LangSmith环境变量 进行应用跟踪，实时了解应用中的每一步发生了什么
-# os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
 # os.environ["LANGCHAIN_API_KEY"] = "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"
 
 
