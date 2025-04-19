@@ -5,8 +5,10 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "dashscope>=1.23.1",
     "fastapi==0.115.8",
     "gradio==5.18.0",
+    "langchain-community>=0.3.21",
     "langchain-openai==0.3.6",
     "langgraph==0.2.74",
     "pydantic==2.10.6",

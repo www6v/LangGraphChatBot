@@ -11,7 +11,8 @@ from langgraph.store.memory import InMemoryStore
 
 
 # openai:调用gpt模型,oneapi:调用oneapi方案支持的模型,ollama:调用本地开源大模型,qwen:调用阿里通义千问大模型
-llm_type = "openai"
+# llm_type = "openai"
+llm_type = "qwen"
 
 
 # 创建和配置chatbot的状态图

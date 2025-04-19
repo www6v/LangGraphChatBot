@@ -4,6 +4,7 @@ from langchain_openai import ChatOpenAI,OpenAIEmbeddings
 from typing import Optional
 import logging
 
+from langchain_community.embeddings import DashScopeEmbeddings
 
 # Author:@南哥AGI研习社 (B站 or YouTube 搜索“南哥AGI研习社”)
 
@@ -30,7 +31,8 @@ MODEL_CONFIGS = {
     },
     "qwen": {
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "api_key": os.getenv("DASHSCOPE_API_KEY"),
+        # "api_key": os.getenv("DASHSCOPE_API_KEY"),
+        "api_key": "sk-799982a8005946f7aa15362912733b15",        
         "chat_model": "qwen-max",
         "embedding_model": "text-embedding-v1"
     },
@@ -87,12 +89,21 @@ def initialize_llm(llm_type: str = DEFAULT_LLM_TYPE) -> tuple[ChatOpenAI, OpenAI
             max_retries=2  # 添加重试次数
         )
 
-        embedding = OpenAIEmbeddings(
-            base_url=config["base_url"],
-            api_key=config["api_key"],
+        # embedding = OpenAIEmbeddings(
+        #     base_url=config["base_url"],
+        #     api_key=config["api_key"],
+        #     model=config["embedding_model"],
+        #     deployment=config["embedding_model"]
+        # )
+
+
+        embedding = DashScopeEmbeddings(
+            # base_url=config["base_url"],
+            dashscope_api_key=config["api_key"],
             model=config["embedding_model"],
-            deployment=config["embedding_model"]
+            # deployment=config["embedding_model"]
         )
+
 
         logger.info(f"成功初始化 {llm_type} LLM")
         return llm, embedding
