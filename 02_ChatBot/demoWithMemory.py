@@ -48,6 +48,8 @@ def create_graph(llm_type: str) -> StateGraph:
             info = "\n".join([d.value["data"] for d in memories])
             # 将检索到的知识拼接到系统prompt
             system_msg = f"You are a helpful assistant talking to the user. User info: {info}"
+            print("system_msg:" + system_msg) ### 
+
             # 获取state中的消息进行消息过滤后存储新的记忆
             last_message = state["messages"][-1]
             if "记住" in last_message.content.lower():
